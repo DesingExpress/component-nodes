@@ -21,10 +21,6 @@ export class overrideStyleNode {
   onExecute() {
     // Get data from Input Slot[1]
     const inputComponent = this.getInputData(0);
-    console.log(
-      `CLONE_ELEMENT: ${JSON.stringify(this.inputs[0])} \n`,
-      inputComponent
-    );
     const style = this.getInputData(1);
     // set output slot data 'hello World'
     this.setOutputData(
