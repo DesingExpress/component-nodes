@@ -14,9 +14,11 @@ export class tabs {
     // Output Slot
     this.addOutput("copmonent", "");
     this.addOutput("onChange", -1);
+    this.addOutput("index", "");
 
     this._setValue = () => {};
     this._onChange = (v) => {
+      this.setOutputData(2, v);
       this.triggerSlot(1, v);
     };
   }
@@ -26,15 +28,7 @@ export class tabs {
 
     this.setOutputData(
       0,
-      Array.isArray(values) ? (
-        <TabsComponent
-          values={values}
-          setValue={(fn) => (this._setValue = fn)}
-          onChange={this._onChange}
-        />
-      ) : (
-        <Fragment />
-      )
+      Array.isArray(values) ? <TabsComponent values={values} setValue={(fn) => (this._setValue = fn)} onChange={this._onChange} /> : <Fragment />
     );
   }
 
